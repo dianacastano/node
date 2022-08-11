@@ -1,22 +1,24 @@
-const express = require('express');
-
+const express = require ('express');
 const app = express();
 
-app.all("*", function(request, response) {
-    let respuesta;
-    
-    console.log("Request received from client");
-    console.log("Petición: ");
-    console.log(" - url       : ", request.url);
-    console.log(' - método    : ', request.method);
-    console.log(" - user-agent: ", request.headers["user-agent"]);
-
-    if (request.url == "/") {
-        respuesta = { ok: true, message: "Recibido!" };
-    } else if (request.url == "/bye") {
-        respuesta = { ok: true, message: "Adios!" };     
-    };
-    response.status(200).json(respuesta);
+app.get('/',function (request, response){
+    console.log('Request received from client');
+    console.log('Request URL : '+request.url);
+    console.log('Request Method : '+request.method);
+    console.log('User-agent : '+request.headers["user-agent"]);
+    response.writeHead(200,{'Content-Type':'application/json'});
+    response.write(JSON.stringify({ ok: true, message: 'Recibido!' }));
+    response.end();
 });
 
-app.listen(3000);
+app.get('/bye',function (request, response){
+    console.log('Request received from client');
+    console.log('Request URL : '+request.url);
+    console.log('Request Method : '+request.method);
+    console.log('User-agent : '+request.headers["user-agent"]);
+    response.writeHead(200,{'Content-Type':'application/json'});
+    response.write(JSON.stringify({ ok: true, message: 'Adios!' }));
+    response.end();
+});
+
+app.listen(4000);
