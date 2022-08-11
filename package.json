@@ -1,5 +1,15 @@
 {
+  "name": "retos_opcionales",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reto_op.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "save": "^2.5.0"
   }
 }
