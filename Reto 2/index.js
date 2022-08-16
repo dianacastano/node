@@ -16,7 +16,7 @@ jQuery(() => {
     })
 })
 
-// Guardar todos los Pokemons (nombres y urls)
+
 async function guardarTodos() {
     try {
         let url = urlApiPokemon + '/pokemon/?limit=5000';
@@ -28,7 +28,7 @@ async function guardarTodos() {
     }
 }
 
-// Filtrar nombres de Pokemons con límite de 15
+
 function filtrarNombres() {
     if (delayKeyup) {
         clearTimeout(delayKeyup);
@@ -50,7 +50,7 @@ function filtrarNombres() {
     }, 300)
 }
 
-// Obetner Pokemon (llamado desde el click del li html creado en filtrarNombres)
+
 async function obtenerPokemon(urlPokemon) {
     $('#busquedaForm').trigger('reset');
     $('#listaPokemon').html('');
@@ -68,7 +68,7 @@ async function obtenerPokemon(urlPokemon) {
     }
 }
 
-// Mostrar Card Pokemon // TODO: preparar Card bootstrap
+
 function mostrarCard(datosCard) {
     let divCard = $('#divCard');
     divCard.html('');
