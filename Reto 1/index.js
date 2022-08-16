@@ -78,13 +78,13 @@ function getProfesional()
     {      
         if (!result.error) {
             
-            // console.log(result);
+            
             let array = result.res
 
             if (id === ""){
 
             for (let id = 0 ; id < array.length ; id++){
-                // console.log(array)
+                
                 final.innerHTML += `<p><div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                 <div class="card-header">TU FAMOSO ES: </div>
                 <div class="card-body">
